@@ -61,7 +61,7 @@ extension Matrix {
     }
 
     private func randomly_activate(_ column: Int) {
-        let random = Glibc.random() % 1000
+        let random = Int.random(in: 0 ..< 1000)
         if random < 35 {
             streams[column].active = true
         }
@@ -89,7 +89,7 @@ extension Matrix {
         let offset = streams[column].offset
         for i in base ..< offset {
             if i >= rows { continue }
-            grid[column][i] = Int32(Glibc.random() % 300)
+            grid[column][i] = Int32(Int.random(in: 0 ..< 300))
         }
     }
 
@@ -114,10 +114,9 @@ extension Matrix {
     }
 
     private func random_length() -> Int {
-        let max = Int((Double(columns) * 0.2).rounded(.down))
-        let min = Int((Double(columns) * 0.05).rounded(.down))
-        let length = Glibc.random() % max
-        return Int(length + min)
+        let max = UInt32((Double(columns) * 0.2).rounded(.down))
+        let min = UInt32((Double(columns) * 0.05).rounded(.down))
+        return Int(UInt32.random(in: 0 ..< max) + min)
     }
 
     func draw() {
