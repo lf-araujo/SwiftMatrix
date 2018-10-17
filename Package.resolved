@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "CNCURSES",
+        "repositoryURL": "https://github.com/lf-araujo/CNCURSES.git",
+        "state": {
+          "branch": null,
+          "revision": "31f16d85dde03fdea5deb222e1976649061159ed",
+          "version": "0.0.1"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
